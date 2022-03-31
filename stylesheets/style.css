@@ -11,7 +11,7 @@
 
 html,
 body {
-  height: 100%;
+  height: auto;
   font-size: 15px;
 }
 
@@ -54,6 +54,7 @@ h6 {
 
 main {
   margin: auto;
+  text-align: center;
 }
 
 .attribution {
@@ -64,19 +65,121 @@ main {
   color: #3e52a3;
 }
 
-.container-main {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-bottom: 0.5rem;
+.btn {
+  display: block;
+  margin: auto;
+  cursor: pointer;
+  width: 100%;
+  height: 3rem;
+  border-color: transparent;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.card,
+.card-middle {
+  border-radius: 0.75rem;
+  padding: 2rem;
+  width: 100%;
+}
+
+.card {
+  background-color: white;
+}
+.card .btn {
+  background-image: linear-gradient(90deg, #a3a8f0, #696fdd);
+  color: #f6f6fe;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.card-middle {
+  background-image: linear-gradient(180deg, #a3a8f0, #696fdd);
+  color: #f6f6fe;
+  transform: scaleY(1rem);
 }
 
 .container-grid {
   display: grid;
   grid-auto-columns: 2fr;
   grid-template-areas: "c-1 c-2 c-3";
-  gap: 1.5rem;
+  width: 70.5rem;
+  height: 32.6rem;
+}
+
+.container-main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  background: url("../images/bg-top.svg") no-repeat right top, url("../images/bg-bottom.svg") no-repeat left bottom, #f6f6fe;
+}
+
+.container-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+}
+.container-price p {
+  font-size: 2.75rem;
+}
+.container-price .price-annually {
+  display: none;
+}
+.container-price .price-montly {
+  font-size: 5rem;
+}
+
+.c-1,
+.c-2,
+.c-3 {
+  display: flex;
+  align-items: center;
+}
+
+.c-1 {
+  grid-area: c-1;
+}
+
+.c-2 {
+  grid-area: c-2;
+}
+
+.c-3 {
+  grid-area: c-3;
+}
+
+.dark-grayish-blue {
+  color: #494c5f;
+}
+
+.heading {
+  color: #6d708d;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 600px) {
+  main {
+    width: 100%;
+  }
+
+  .container-grid {
+    width: auto;
+    height: auto;
+    row-gap: 2rem;
+    grid-template-areas: "c-1" "c-2" "c-3";
+  }
+
+  .container-main {
+    padding: 3rem 1.25rem;
+    height: auto;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,13 +1,15 @@
 @use "reset";
 
-$linear-gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
+$linear-gradient: hsl(236, 72%, 79%), hsl(237, 63%, 64%);
 $very-light-grayish-blue: hsl(240, 78%, 98%);
 $light-grayish-blue: hsl(234, 14%, 74%);
 $grayish-blue: hsl(233, 13%, 49%);
 $dark-grayish-blue: hsl(232, 13%, 33%);
+$white: hsl(0, 0%, 100%);
 
 main {
   margin: auto;
+  text-align: center;
 }
 
 .attribution {
@@ -19,17 +21,128 @@ main {
   }
 }
 
-.container-main {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-bottom: 0.5rem;
+.btn {
+  display: block;
+  margin: auto;
+  cursor: pointer;
+  width: 100%;
+  height: 3rem;
+  border-color: transparent;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.card,
+.card-middle {
+  border-radius: 0.75rem;
+  padding: 2rem;
+  width: 100%;
+}
+
+.card {
+  background-color: $white;
+
+  .btn {
+    background-image: linear-gradient(90deg, $linear-gradient);
+    color: $very-light-grayish-blue;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}
+
+.card-middle {
+  background-image: linear-gradient(180deg, $linear-gradient);
+  color: $very-light-grayish-blue;
+  transform: scaleY(1rem);
 }
 
 .container-grid {
   display: grid;
   grid-auto-columns: 2fr;
   grid-template-areas: "c-1 c-2 c-3";
-  gap: 1.5rem;
+  width: 70.5rem;
+  height: 32.6rem;
+}
+
+.container-main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  background: url("../images/bg-top.svg") no-repeat right top,
+    url("../images/bg-bottom.svg") no-repeat left bottom,
+    $very-light-grayish-blue;
+}
+
+.container-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+
+  p {
+    font-size: 2.75rem;
+  }
+
+  .price-annually {
+    display: none;
+  }
+
+  .price-montly {
+    font-size: 5rem;
+  }
+}
+
+.c-1,
+.c-2,
+.c-3 {
+  display: flex;
+  align-items: center;
+}
+
+.c-1 {
+  grid-area: c-1;
+}
+
+.c-2 {
+  grid-area: c-2;
+}
+
+.c-3 {
+  grid-area: c-3;
+}
+
+.dark-grayish-blue {
+  color: $dark-grayish-blue;
+}
+
+.heading {
+  color: $grayish-blue;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 600px) {
+  main {
+    width: 100%;
+  }
+
+  .container-grid {
+    width: auto;
+    height: auto;
+    row-gap: 2rem;
+    grid-template-areas:
+      "c-1"
+      "c-2"
+      "c-3";
+  }
+
+  .container-main {
+    padding: 3rem 1.25rem;
+    height: auto;
+  }
 }
