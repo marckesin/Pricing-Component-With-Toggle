@@ -1,0 +1,35 @@
+@use "reset";
+
+$linear-gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
+$very-light-grayish-blue: hsl(240, 78%, 98%);
+$light-grayish-blue: hsl(234, 14%, 74%);
+$grayish-blue: hsl(233, 13%, 49%);
+$dark-grayish-blue: hsl(232, 13%, 33%);
+
+main {
+  margin: auto;
+}
+
+.attribution {
+  font-size: 1rem;
+  text-align: center;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+.container-main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+}
+
+.container-grid {
+  display: grid;
+  grid-auto-columns: 2fr;
+  grid-template-areas: "c-1 c-2 c-3";
+  gap: 1.5rem;
+}
