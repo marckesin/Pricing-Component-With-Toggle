@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <!-- displays site properly based on user's device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This is a solution to the: Interactive pricing component challenge on Frontend Mentor"
+    />
     <link
       rel="icon"
       type="image/png"
@@ -11,13 +15,20 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="stylesheets/style.css" />
-    <title>Frontend Mentor | [Challenge Name Here]</title>
+    <title>Frontend Mentor | Pricing component with toggle</title>
   </head>
   <body>
     <div class="container-main">
       <main>
         <h1 class="heading">Our Pricing</h1>
-        <div class="toggle">Annually Monthly</div>
+        <div class="toggle">
+          Annually
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+          Monthly
+        </div>
         <div class="container-grid">
           <div class="c-1">
             <div class="card">
