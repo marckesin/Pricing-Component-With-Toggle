@@ -13,7 +13,7 @@ main {
 }
 
 .attribution {
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-align: center;
 
   a {
@@ -22,14 +22,21 @@ main {
 }
 
 .btn {
-  display: block;
+  all: unset;
+  box-sizing: border-box;
+  padding: 0;
   margin: auto;
   cursor: pointer;
   width: 100%;
   height: 3rem;
-  border-color: transparent;
+  border: 3px solid transparent;
   border-radius: 0.4rem;
   font-size: 0.85rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  // -moz-transition: all 0.3s ease-in-out;
+  // -webkit-transition: all 0.3s ease-in-out;
+  // -o-transition: all 0.3s ease-in-out;
 }
 
 .card,
@@ -45,15 +52,38 @@ main {
   .btn {
     background-image: linear-gradient(90deg, $linear-gradient);
     color: $very-light-grayish-blue;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    &:hover {
+      background-image: linear-gradient(0deg, transparent, transparent);
+      color: hsl(237, 63%, 64%);
+      border-color: $light-grayish-blue;
+    }
   }
 }
 
 .card-middle {
   background-image: linear-gradient(180deg, $linear-gradient);
   color: $very-light-grayish-blue;
-  transform: scaleY(1rem);
+  height: 100%;
+  display: flex;
+
+  button {
+    color: hsl(237, 63%, 64%);
+    letter-spacing: 2px;
+    background-color: $white;
+
+    &:hover {
+      background-color: transparent;
+      color: $very-light-grayish-blue;
+      border-color: $light-grayish-blue;
+    }
+  }
+
+  .card-middle-inner {
+    margin: auto;
+    flex-grow: 1;
+  }
 }
 
 .container-grid {
@@ -61,7 +91,7 @@ main {
   grid-auto-columns: 2fr;
   grid-template-areas: "c-1 c-2 c-3";
   width: 70.5rem;
-  height: 32.6rem;
+  height: 33rem;
 }
 
 .container-main {
@@ -80,6 +110,7 @@ main {
   align-items: center;
   justify-content: center;
   gap: 0.45rem;
+  margin-bottom: 0.75rem;
 
   p {
     font-size: 2.75rem;
@@ -90,7 +121,7 @@ main {
   }
 
   .price-montly {
-    font-size: 5rem;
+    font-size: 4.5rem;
   }
 }
 
@@ -113,10 +144,6 @@ main {
   grid-area: c-3;
 }
 
-.dark-grayish-blue {
-  color: $dark-grayish-blue;
-}
-
 .heading {
   color: $grayish-blue;
 }
@@ -124,6 +151,33 @@ main {
 .list {
   display: flex;
   flex-direction: column;
+  margin-bottom: 2.25rem;
+
+  p:nth-child(3) {
+    border-bottom: 1px solid hsla(234, 14%, 74%, 0.4);
+  }
+
+  p {
+    padding: 1rem;
+    border-top: 1px solid hsla(234, 14%, 74%, 0.4);
+  }
+}
+
+.plan {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.text-dark-grayish-blue {
+  color: $dark-grayish-blue;
+}
+
+.text-grayish-blue {
+  color: $grayish-blue;
+}
+
+.toggle {
+  color: $light-grayish-blue;
 }
 
 @media (max-width: 600px) {
