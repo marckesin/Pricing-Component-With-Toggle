@@ -281,7 +281,7 @@ main {
   }
 
   .container-main {
-    padding: 5rem 1.25rem 1.5rem;
+    padding: 5rem 1.5rem 1.5rem;
     height: auto;
     background: url("../images/bg-top.svg") no-repeat, #f6f6fe;
     background-position: 13rem -2rem;
